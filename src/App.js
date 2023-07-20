@@ -8,13 +8,16 @@ import Reports from './Components/Reports';
 import Cource from './Components/Cource';
 import MainContaint from './Daashboard/MainContent';
 
+
+
 const App = () => {
   return (
     <Router>
       <div>
         <Sidebar />
-        <div id="content">
+        <div id="content">       
           <NavBar />
+          <login/>
           <Routes>
             <Route path="/" element={<MainContaint/>} />
             <Route path="/Cource" element={<Cource />} />

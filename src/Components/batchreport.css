@@ -1,0 +1,51 @@
+table {
+    /* margin: 5rem auto; */
+    border-radius: 2rem;
+    border-collapse: collapse;
+    overflow: hidden;
+    /* max-width: fit-content */
+  }
+  
+  li, p, a, td{
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+  
+  thead {
+    font-size: 1.8rem;
+    color: #fff;
+  }
+  
+  th,
+  td {
+    width: 50rem;
+    padding: 1.5rem;
+    line-height: 1.7;
+  }
+  
+  td {
+    font-size: 1.4rem;
+  }
+  .batch-report-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .pagination button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #8bd6d3;
+    color: white;
+  }

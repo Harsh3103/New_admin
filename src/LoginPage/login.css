@@ -1,0 +1,136 @@
+/* login.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 380px;
+    overflow: hidden;
+  }
+  
+  .top-header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #f7f7f7;
+  }
+  
+  .top-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .top-header small {
+    color: #888;
+  }
+  
+  .input-group {
+    padding: 30px;
+  }
+  
+  .input-field {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .input-box {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    background: transparent;
+  }
+  
+  .input-box:focus ~ label,
+  .input-box:valid ~ label {
+    top: -12px;
+    font-size: 12px;
+    color: #007bff;
+  }
+  
+  label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: #888;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+  
+  .eye-area {
+    position: absolute;
+    top: 25px;
+    right: 0;
+  }
+  
+  .eye-box {
+    cursor: pointer;
+  }
+  
+  .check {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+  
+  .input-submit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .input-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .forgot a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .forgot a:hover {
+    text-decoration: underline;
+  }
+  
+  .switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+  }
+  
+  .login,
+  .register {
+    display: block;
+    text-decoration: none;
+    color: #888;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .login.active,
+  .register.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+  }
+  

@@ -54,11 +54,11 @@
     table {
       margin: 5rem auto;
       border-radius: 2rem;
-      border: 1rem hidden #443C68;
+      /* border: 1rem hidden #443C68; */
       border-collapse: collapse;
       box-shadow: 0 0 0 1px black;
       overflow: hidden;
-      max-width: 40rem;
+      max-width: fit-content;
     }
     
     li, p, a, td{
@@ -74,7 +74,7 @@
     
     th,
     td {
-      border: 1px solid #4b3d88;
+      /* border: 1px solid #4b3d88; */
       width: 50rem;
       padding: 1.5rem;
       line-height: 1.7;

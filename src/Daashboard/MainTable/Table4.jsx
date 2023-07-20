@@ -5,11 +5,12 @@ import * as XLSX from 'xlsx';
 
 const Table4 = () => {
   const [students, setStudents] = useState([]);
+  const [filterText, setFilterText] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://192.168.1.55:3000/fetchData');
+        const response = await axios.get('http://192.168.1.55:5000/fetchData');
         setStudents(response.data);
       } catch (error) {
         console.log(error);
@@ -32,6 +33,16 @@ const Table4 = () => {
     link.click();
     URL.revokeObjectURL(excelUrl);
   };
+
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+  };
+
+  const filteredStudents = students.filter(
+    (student) =>
+      student.Batch_Name.toLowerCase().includes(filterText.toLowerCase()) ||
+      student.Course.toLowerCase().includes(filterText.toLowerCase())
+  );
 
   const columns = [
     {
@@ -84,12 +95,23 @@ const Table4 = () => {
   return (
     <div className="table container">
       <h1 style={{ textAlign: 'center' }}>Total Batch</h1>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
-        <button type='button' className='btn btn-success' onClick={handleDownload} style={{ marginRight: '1rem' }}>
-          Download
-        </button>
+      <div className='Search' style={{display:'flex',justifyContent: 'flex-end'}} >
+        <span style={{padding:'10px'}}>
+          <input
+            type="text"
+            style={{borderRadius:'10px',width:'20rem'}}
+            value={filterText}
+            onChange={handleFilterChange}
+            placeholder="Filter by Batch Name or Course"
+          />
+        </span>
+        <span style={{padding:'10px'}}>
+          <button type='button' className='btn btn-success' onClick={handleDownload} style={{ marginRight: '1rem' }}>
+            Download
+          </button>
+        </span>
       </div>
-      <DataTable columns={columns} data={students} pagination highlightOnHover striped />
+      <DataTable columns={columns} data={filteredStudents} pagination highlightOnHover striped />
     </div>
   );
 };

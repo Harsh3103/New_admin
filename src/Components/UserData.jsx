@@ -3,16 +3,19 @@ const UserData = ({users}) => {
         <>
             {
                 users.map((curUser) => {
-                    const {id, name, email} = curUser;
-                    const {street, city, zipcode} = curUser.address;
+                    const {_id,CRMID, name, email,batch,contact} = curUser;
+                    
 
                     return (
-                        <tr key={id}>
-                            <td>{id}</td>
+                        <div className="table">
+                        <tr key={_id}>
+                            <td>{CRMID}</td>
                             <td>{name}</td>
                             <td>{email}</td>
-                            <td>{street}, {city}, {" "}, {zipcode}</td>
+                            <td>{batch}</td>
+                            <td>{contact}</td>
                         </tr>
+                        </div>
                     )
                 })
 

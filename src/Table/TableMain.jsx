@@ -8,7 +8,7 @@ const TableMain = () => {
   React.useEffect(() => {
     const getStudents = async () => {
       try {
-        const response = await axios.get('http://192.168.0.117:3001/getCourseData');
+        const response = await axios.get('http://192.168.1.44:3001/getCourseData/');
         setStudents(response.data);
       } catch (error) {
         console.log(error);
@@ -20,8 +20,18 @@ const TableMain = () => {
 
   const columns = [
     {
-      name: 'Student ID',
-      selector: (row) => row.studentId,
+      name: 'CRM ID',
+      selector: (row) => row.studentId.CRMID,
+      sortable: true,
+    },
+    {
+      name: 'Student Name',
+      selector: (row) => row.studentId.name,
+      sortable: true,
+    },
+    {
+      name: 'Contact',
+      selector: (row) => row.studentId.contact,
       sortable: true,
     },
     {
@@ -30,25 +40,21 @@ const TableMain = () => {
       sortable: true,
     },
     {
-      name: 'Apptitude',
-      selector: (row) => row.Apptitude,
+      name: 'Batch',
+      selector: (row) => row.studentId.batch,
       sortable: true,
     },
     {
-      name: 'English',
-      selector: (row) => row.English,
+      name: 'Course',
+      selector: (row) => row.studentId.course,
       sortable: true,
     },
-    {
-      name: 'Technical',
-      selector: (row) => row.Technical,
-      sortable: true,
-    },
+
   ];
 
   return (
     <div className="table table-borderless container">
-      <h1 style={{textAlign:'center'}}>Courses Report</h1>
+      <h1 style={{textAlign:'center'}}>Batch Report</h1>
       <DataTable
         columns={columns}
         data={students}
