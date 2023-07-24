@@ -62,7 +62,10 @@ const MainContaint = () => {
             <h3 className="card-title" style={{ padding: '20px', fontSize: '25px' }}>
               Total LOI Students
             </h3>
-            <p className="card-count">{totalLoiStudents}</p>
+            <div style={{display:'flex',padding:'25px' }}>
+            <h4> Total LOI sign Students:</h4> 
+            <h4 className="card-count">{totalLoiStudents}</h4>
+            </div>
           </div>
           <div className="card-content" style={{ marginTop: '27px', tabSize: '40px' }}>
             <div className="icon icon-warning">
@@ -81,7 +84,13 @@ const MainContaint = () => {
             <h3 className="card-title" style={{ padding: '20px', fontSize: '25px' }}>
               Afront Students
             </h3>
-            <p className="card-count">{totalAfrontStudents}</p>
+
+            <div style={{display:'flex',paddingLeft:'30px' }}>
+            <h4> Total LOI not sign Students:</h4> 
+            <h4 className="card-count">{totalAfrontStudents}</h4>
+            </div>
+
+            
           </div>
           <div className="card-content" style={{ marginTop: '27px', tabSize: '40px' }}>
             <div className="icon icon-success">
@@ -96,6 +105,8 @@ const MainContaint = () => {
           onClick={handleButton3Click} style={{ cursor: 'pointer' }}
         >
           <div className="card-header">
+            
+            
             <h3 className="card-title" style={{padding:'20px',fontSize:"25px"}}>Total Test</h3>
             <p className="card-count">{totalTestShare}</p>
           </div>

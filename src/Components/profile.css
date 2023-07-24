@@ -1,0 +1,51 @@
+.pd {
+    padding: 40px;
+  }
+  
+  .edit-form {
+    max-width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .edit-form p {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .edit-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Add hover effect to input textboxes */
+  .edit-form input:hover {
+    background-color: #f8f8f8; /* Light grey on hover */
+  }
+  
+  .btn-sub {
+    margin-top: 15px;
+  }
+  
+  .btn-sub button {
+    padding: 10px 20px;
+    background-color: #10c469;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-sub button:hover {
+    background-color: #0e9143;
+  }

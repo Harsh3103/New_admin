@@ -1,96 +1,44 @@
 import React, { useState } from "react";
-import "./Cource.css";
-import BatchReport from "./BatchReport";
+import './Cource.css'
 
 const Cource = () => {
-  const [selectedCourse, setSelectedCourse] = useState("FSD");
-  const [showComponent, setShowComponent] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("FSD");
 
-  const handleCourseChange = (event) => {
-    setSelectedCourse(event.target.value);
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
   };
 
-  const handleIconClick = () => {
-    setShowComponent(true);
-  };
+  // Sample card data. Replace with actual card data from an API in a real app.
+  const fsdCards = [
+    { id: 1, title: "FSD Card 1", content: "This is the content of FSD Card 1" },
+    { id: 2, title: "FSD Card 2", content: "This is the content of FSD Card 2" },
 
-  const handleCloseComponent = () => {
-    setShowComponent(false);
-  };
+  ];
 
-  const generateCards = () => {
-    if (selectedCourse === "FSD") {
-      return Array(6)
-        .fill()
-        .map((_, index) => (
-          <div className="col-md-4" key={`fsd-batch-${index}`}>
-            <div className="card rounded shadow-sm p-3 mb-4 green-gradient">
-              <h5 className="card-title" id={`batch${index + 1}`}>
-                batch-{index + 1}
-              </h5>
-              <p className="card-text">This is the {index+1} FSD batch.</p>
-              <a className="info-link" onClick={handleIconClick}>
-                <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-              </a>
-            </div>
-          </div>
-        ));
-    } else if (selectedCourse === "DS") {
-      return Array(5)
-        .fill()
-        .map((_, index) => (
-          <div className="col-md-4" key={`ds-batch-${index}`}>
-            <div className="card rounded shadow-sm p-3 mb-4">
-              <h5 className="card-title" id={`batch${index + 1}`}>
-                batch-{index + 1}
-              </h5>
-              <p className="card-text">This is the first DS batch.</p>
-              <a className="info-link" onClick={handleIconClick}>
-                <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-              </a>
-            </div>
-          </div>
-        ));
-    }
-  };
+  const dsCards = [
+    { id: 1, title: "DS Card 1", content: "This is the content of DS Card 1" },
+    { id: 2, title: "DS Card 2", content: "This is the content of DS Card 2" },
+  ];
+
+  const dynamicCards = selectedOption === "FSD" ? fsdCards : dsCards;
 
   return (
-    <div className="cource-box">
-      <div className="row">
-        <div className="col-md-9 offset-md-1">
-          <div className="mb-4">
-            <div className="dropdown ">
-              <button className="dropdown-button btn">Select Course</button>
-              <div className="dropdown-content">
-                <button
-                  className="btn"
-                  value="FSD"
-                  onClick={handleCourseChange}
-                >
-                  FSD
-                </button>
-                <button className="btn" value="DS" onClick={handleCourseChange}>
-                  DS
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">{generateCards()}</div>
-        </div>
+    <div className="container">
+      <div className="search-bar" >
+        <select  value={selectedOption} onChange={handleOptionChange}>
+          <option value="FSD">FSD</option>
+          <option value="DS">DS</option>
+        </select>
       </div>
 
-      {showComponent && (
-        <div className="overlay">
-          <div className="overlay-content">
-           <BatchReport/>
-            <button
-              className="btn-close bg-primary"
-              onClick={handleCloseComponent}
-            ></button>
+      <div className="card-container">
+        {dynamicCards.map((card) => (
+          <div key={card.id} className="card">
+            <h2>{card.title}</h2>
+            <p>{card.content}</p>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
     </div>
   );
 };

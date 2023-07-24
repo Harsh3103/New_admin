@@ -1,9 +1,9 @@
-table {
-    /* margin: 5rem auto; */
+/* table {
+  
     border-radius: 2rem;
     border-collapse: collapse;
     overflow: hidden;
-    /* max-width: fit-content */
+    
   }
   
   li, p, a, td{
@@ -48,4 +48,4 @@ table {
   .pagination button.active {
     background-color: #8bd6d3;
     color: white;
-  }
+  } */

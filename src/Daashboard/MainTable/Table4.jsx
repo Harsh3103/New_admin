@@ -10,7 +10,7 @@ const Table4 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://192.168.1.55:5000/fetchData');
+        const response = await axios.get('http://192.168.1.9:5000/fetchData');
         setStudents(response.data);
       } catch (error) {
         console.log(error);

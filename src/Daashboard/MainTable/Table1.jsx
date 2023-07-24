@@ -8,7 +8,7 @@ const Table1 = ({ setTotalLoiStudents, setTotalAfrontStudents, setTotalTestShare
   useEffect(() => {
     const getStudents = async () => {
       try {
-        const response = await axios.get('http://192.168.0.105:3001/getCourseData/');
+        const response = await axios.get('http://192.168.1.9:6000/getCourseData/');
         setStudents(response.data);
         const loiStudentsData = response.data.filter(student => student.loistudends === 'yes');
         const afrontStudentsData = response.data.filter(student => student.loistudends === 'no');

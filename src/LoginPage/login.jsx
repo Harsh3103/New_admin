@@ -1,133 +1,50 @@
-import React, { useState } from 'react';
-import './login.css';
+import React from 'react';
+import './login.css'
+import {
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBBtn,
+  MDBIcon,
+  MDBInput,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit';
 
-const Login = () => {
-    const [activeForm, setActiveForm] = useState('login');
+function login() {
+  return (
+    <MDBContainer fluid className="p-3 my-5 container" >
 
-    const toggleForm = () => {
-        setActiveForm(activeForm === 'login' ? 'register' : 'login');
-    };
+      <MDBRow>
 
-    const toggleLogPassword = () => {
-        const a = document.getElementById('logPassword');
-        const eye = document.getElementById('eye');
-        const eyeSlash = document.getElementById('eye-slash');
+        <MDBCol col='10' md='6'>
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
+        </MDBCol>
 
-        if (a.type === "password") {
-            a.type = "text";
-            eye.style.opacity = "0";
-            eyeSlash.style.opacity = "1";
-        } else {
-            a.type = "password";
-            eye.style.opacity = "1";
-            eyeSlash.style.opacity = "0";
-        }
-    };
+        <MDBCol col='4' md='6'>
 
-    const toggleRegPassword = () => {
-        const d = document.getElementById('regPassword');
-        const eye2 = document.getElementById("eye-2");
-        const eyeSlash2 = document.getElementById("eye-slash-2");
+        <MDBCol col='5' md='6' className='img_logo'>
+          <img className='img-logo-2'  src="https://hopingminds.com/wp-content/uploads/2023/01/Asset-5.png" style={{ marginLeft:'50%', width:'200px',height:'auto',display:'flex'}}/>
+        </MDBCol>
 
-        if (d.type === "password") {
-            d.type = "text";
-            eye2.style.opacity = "0";
-            eyeSlash2.style.opacity = "1";
-        } else {
-            d.type = "password";
-            eye2.style.opacity = "1";
-            eyeSlash2.style.opacity = "0";
-        }
-    };
+          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
+          <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
 
-    return (
-        <div className="container">
-            <div className="box">
-                {/* <!-- Login Box --> */}
-                <div className={`box-login ${activeForm === 'login' ? 'active' : ''}`}>
 
-                    <div className="top-header">
-                        <h3>Hello, Again</h3>
-                        <small>We are happy to have you back.</small>
-                    </div>
-                    <div className="input-group">
-                        <div className="input-field">
-                            <input type="text" className="input-box" id="logEmail" required />
-                            <label htmlFor="logEmail">Email address</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="password" className="input-box" id="logPassword" required />
-                            <label htmlFor="logPassword">Password</label>
-                            <div className="eye-area">
-                                <div className="eye-box" onClick={toggleLogPassword}>
-                                    <i className="fa-regular fa-eye" id="eye"></i>
-                                    <i className="fa-regular fa-eye-slash" id="eye-slash"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="remember">
-                            <input type="checkbox" id="formCheck" className="check" />
-                            <label htmlFor="formCheck"> Remember Me</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="submit" className="input-submit" value="Sign In" />
-                        </div>
-                        <div className="forgot">
-                            <a href="#">Forgot password?</a>
-                        </div>
-                    </div>
+          <div className="d-flex justify-content-between mx-4 mb-4">
+            <MDBCheckbox style={{fontSize:'20px'}} name='flexCheck' value='' id='flexCheckDefault' label='Remember me' labelStyle={{fontSize:'15px'}}/>
+            <a href="!#">Forgot password?</a>
+          </div>
 
-                </div>
+          <button className="mb-4 w-100 btn btn-success" size="lg">Sign in</button>
 
-                {/* <!-- Register Box --> */}
+         
+        </MDBCol>
 
-                <div className={`box-register ${activeForm === 'register' ? 'active' : ''}`}>
+      </MDBRow>
 
-                    <div className="top-header">
-                        <h3>Sign Up, Now</h3>
-                        <small>We are happy to have you with us.</small>
-                    </div>
-                    <div className="input-group">
-                        <div className="input-field">
-                            <input type="text" className="input-box" id="regUser" required />
-                            <label htmlFor="regUser">Username</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="text" className="input-box" id="regEmail" required />
-                            <label htmlFor="regEmail">Email address</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="password" className="input-box" id="regPassword" required />
-                            <label htmlFor="regPassword">Password</label>
-                            <div className="eye-area">
-                                <div className="eye-box" onClick={toggleRegPassword}>
-                                    <i className="fa-regular fa-eye" id="eye-2"></i>
-                                    <i className="fa-regular fa-eye-slash" id="eye-slash-2"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="remember">
-                            <input type="checkbox" id="formCheck-2" className="check" />
-                            <label htmlFor="formCheck-2"> Remember Me</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="submit" className="input-submit" value="Sign Up" />
-                        </div>
-                    </div>
+    </MDBContainer>
+  );
+}
 
-                </div>
-
-                {/* <!-- Switch --> */}
-
-                <div className="switch">
-                    <a href="#" className={`login ${activeForm === 'login' ? 'active' : ''}`} onClick={toggleForm}>Login</a>
-                    <a href="#" className={`register ${activeForm === 'register' ? 'active' : ''}`} onClick={toggleForm}>Register</a>
-                    <div className="btn-active" id="btn"></div>
-                </div>
-
-            </div>
-        </div>
-    );
-};
-
-export default Login;
+export default login;
