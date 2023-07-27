@@ -63,7 +63,7 @@ const MainContaint = () => {
               Total LOI Students
             </h3>
             <div style={{display:'flex',padding:'25px' }}>
-            <h4> Total LOI sign Students:</h4> 
+            <h4 className='text-3xl font-bold underline'> Total LOI sign Students:</h4> 
             <h4 className="card-count">{totalLoiStudents}</h4>
             </div>
           </div>

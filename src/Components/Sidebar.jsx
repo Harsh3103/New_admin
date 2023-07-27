@@ -32,15 +32,15 @@ const Sidebar = () => {
         </div>
         <ul className="list-unstyled components">
 
-        <li className="">
+        {/* <li className="">
             <Link to="/" className="login">
               <i className="material-icons">Login</i>
               <span>Login</span>
             </Link>
-          </li>
+          </li> */}
 
           <li className="">
-            <Link to="/dashboard" className="dashboard">
+            <Link to="/" className="dashboard">
               <i className="material-icons">dashboard</i>
               <span>Dashboard</span>
             </Link>

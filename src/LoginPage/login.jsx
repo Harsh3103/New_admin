@@ -32,7 +32,7 @@ function login() {
 
 
           <div className="d-flex justify-content-between mx-4 mb-4">
-            <MDBCheckbox style={{fontSize:'20px'}} name='flexCheck' value='' id='flexCheckDefault' label='Remember me' labelStyle={{fontSize:'15px'}}/>
+            <MDBCheckbox style={{fontSize:'20px'}} name='flexCheck' value='' id='flexCheckDefault' label='Remember me' labelStyle={{size:'20px'}}/>
             <a href="!#">Forgot password?</a>
           </div>
 

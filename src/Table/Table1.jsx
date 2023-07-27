@@ -9,7 +9,7 @@ const Table1 = () => {
   React.useEffect(() => {
     const getStudents = async () => {
       try {
-        const response = await axios.get('http://192.168.1.9:6000/getCourseData/');
+        const response = await axios.get('http://192.168.1.22:8000/getCourseData/');
         setStudents(response.data);
       } catch (error) {
         console.log(error);

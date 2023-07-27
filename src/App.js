@@ -7,7 +7,7 @@ import Profile from './Components/Profile';
 import Reports from './Components/Reports';
 import Cource from './Components/Cource';
 import MainContaint from './Daashboard/MainContent';
-import Login from './LoginPage/login'
+
 
 
 const App = () => {
@@ -19,8 +19,8 @@ const App = () => {
           <NavBar />
           <login/>
           <Routes>
-            <Route path="/" element={<Login/>} />
-            <Route path="/dashboard" element={<MainContaint/>} />
+            {/* <Route path="/" element={<Login/>} /> */}
+            <Route path="/" element={<MainContaint/>} />
             <Route path="/Cource" element={<Cource />} />
             <Route path="/Reports" element={<Reports />} />
             <Route path="/Profile" element={<Profile />} />
